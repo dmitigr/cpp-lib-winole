@@ -14,10 +14,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-if (NOT WIN32)
-  return()
-endif()
-
 # ------------------------------------------------------------------------------
 # Info
 # ------------------------------------------------------------------------------
@@ -27,6 +23,10 @@ dmitigr_libs_set_library_info(winole 0 0 0 "Windows OLE stuff")
 # ------------------------------------------------------------------------------
 # Sources
 # ------------------------------------------------------------------------------
+
+if (NOT WIN32)
+  return()
+endif()
 
 set(dmitigr_winole_headers
   site.hpp

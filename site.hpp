@@ -431,13 +431,6 @@ inline LRESULT CALLBACK Site::wnd_proc(const HWND window, const UINT message,
         nh.code = 1;
         SendMessage(GetParent(window), WM_NOTIFY, 0, reinterpret_cast<LPARAM>(&nh));
       }
-      // DefWindowProc(window, message, wparam, lparam);
-
-      // if (site->is_in_place_activated_) {
-      //   SendMessage(window, wm_activate_in_place, 0, 0);
-      //   InvalidateRect(window, 0, true);
-      //   SendMessage(window, wm_activate_in_place, 1, 0);
-      // }
 
       IOleInPlaceObject* in_place_obj{};
       if (site->ole_object()->QueryInterface(&in_place_obj) != S_OK)
